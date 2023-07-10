@@ -1,0 +1,549 @@
+Conda uses environments to load different sets of Python packages
+type conda env list to see the environments availible.
+23/04/27 00:12:17 INFO SparkContext: Running Spark version 3.3.1
+23/04/27 00:12:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/04/27 00:12:17 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+23/04/27 00:12:17 INFO ResourceUtils: ==============================================================
+23/04/27 00:12:17 INFO ResourceUtils: No custom resources configured for spark.driver.
+23/04/27 00:12:17 INFO ResourceUtils: ==============================================================
+23/04/27 00:12:17 INFO SparkContext: Submitted application: Lab 5 Exercise
+23/04/27 00:12:17 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+23/04/27 00:12:17 INFO ResourceProfile: Limiting resource is cpu
+23/04/27 00:12:17 INFO ResourceProfileManager: Added ResourceProfile id: 0
+23/04/27 00:12:17 INFO SecurityManager: Changing view acls to: acq21ps
+23/04/27 00:12:17 INFO SecurityManager: Changing modify acls to: acq21ps
+23/04/27 00:12:17 INFO SecurityManager: Changing view acls groups to: 
+23/04/27 00:12:17 INFO SecurityManager: Changing modify acls groups to: 
+23/04/27 00:12:17 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(acq21ps); groups with view permissions: Set(); users  with modify permissions: Set(acq21ps); groups with modify permissions: Set()
+23/04/27 00:12:18 INFO Utils: Successfully started service 'sparkDriver' on port 40156.
+23/04/27 00:12:18 INFO SparkEnv: Registering MapOutputTracker
+23/04/27 00:12:18 INFO SparkEnv: Registering BlockManagerMaster
+23/04/27 00:12:18 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/04/27 00:12:18 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/04/27 00:12:18 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+23/04/27 00:12:18 INFO DiskBlockManager: Created local directory at /mnt/fastdata/acq21ps/blockmgr-d9c1f5e4-54e9-48e7-85cf-0717c45f135a
+23/04/27 00:12:18 INFO MemoryStore: MemoryStore started with capacity 7.8 GiB
+23/04/27 00:12:18 INFO SparkEnv: Registering OutputCommitCoordinator
+23/04/27 00:12:19 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/04/27 00:12:19 INFO Executor: Starting executor ID driver on host sharc-node112.shef.ac.uk
+23/04/27 00:12:19 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+23/04/27 00:12:19 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34229.
+23/04/27 00:12:19 INFO NettyBlockTransferService: Server created on sharc-node112.shef.ac.uk:34229
+23/04/27 00:12:19 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/04/27 00:12:19 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, sharc-node112.shef.ac.uk, 34229, None)
+23/04/27 00:12:19 INFO BlockManagerMasterEndpoint: Registering block manager sharc-node112.shef.ac.uk:34229 with 7.8 GiB RAM, BlockManagerId(driver, sharc-node112.shef.ac.uk, 34229, None)
+23/04/27 00:12:19 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, sharc-node112.shef.ac.uk, 34229, None)
+23/04/27 00:12:19 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, sharc-node112.shef.ac.uk, 34229, None)
+-------------------------------- TASK A QUESTION 1 ------------------------------------------------------------------
++------+-------+------+---------+
+|userId|movieId|rating|timestamp|
++------+-------+------+---------+
+|28507 |1176   |4.0   |789652004|
+|131160|21     |3.0   |789652009|
+|131160|47     |5.0   |789652009|
+|131160|1079   |3.0   |789652009|
+|20821 |32     |5.0   |822873600|
+|53434 |19     |1.0   |822873600|
+|85252 |2      |4.0   |822873600|
+|85252 |7      |5.0   |822873600|
+|85252 |10     |5.0   |822873600|
+|85252 |11     |5.0   |822873600|
+|85252 |12     |1.0   |822873600|
+|85252 |17     |5.0   |822873600|
+|85252 |19     |3.0   |822873600|
+|85252 |21     |4.0   |822873600|
+|85252 |22     |4.0   |822873600|
+|85252 |24     |3.0   |822873600|
+|85252 |32     |4.0   |822873600|
+|85252 |34     |5.0   |822873600|
+|85252 |36     |5.0   |822873600|
+|85252 |45     |3.0   |822873600|
++------+-------+------+---------+
+only showing top 20 rows
+
+0.3999999900001315
++------+-------+------+----------+
+|userId|movieId|rating|timestamp |
++------+-------+------+----------+
+|1108  |84392  |3.0   |1376108150|
+|1282  |2664   |4.0   |1337603157|
+|2071  |500    |2.5   |1120532484|
+|2116  |2054   |0.5   |1111473086|
+|2210  |1610   |4.5   |1165037396|
+|2261  |640    |2.5   |1067803113|
+|2349  |2393   |4.5   |1181707056|
+|2663  |50068  |2.5   |1310385028|
+|3703  |7445   |3.5   |1111573673|
+|3911  |72011  |4.5   |1268579834|
+|4428  |5956   |4.5   |1100922152|
+|4461  |1517   |3.0   |1167459926|
+|4581  |480    |2.5   |1114797946|
+|4780  |527    |3.0   |1405622058|
+|4910  |58559  |5.0   |1417222339|
+|4951  |1367   |4.5   |1151792181|
+|5155  |830    |2.5   |1108144802|
+|5443  |1      |4.0   |1280006151|
+|5509  |474    |4.0   |1212778438|
+|6030  |58309  |0.5   |1250561349|
++------+-------+------+----------+
+only showing top 20 rows
+
+0.6000000099998685
++------+-------+------+---------+
+|userId|movieId|rating|timestamp|
++------+-------+------+---------+
+|28507 |1176   |4.0   |789652004|
+|131160|21     |3.0   |789652009|
+|131160|47     |5.0   |789652009|
+|131160|1079   |3.0   |789652009|
+|20821 |32     |5.0   |822873600|
+|53434 |19     |1.0   |822873600|
+|85252 |2      |4.0   |822873600|
+|85252 |7      |5.0   |822873600|
+|85252 |10     |5.0   |822873600|
+|85252 |11     |5.0   |822873600|
+|85252 |12     |1.0   |822873600|
+|85252 |17     |5.0   |822873600|
+|85252 |19     |3.0   |822873600|
+|85252 |21     |4.0   |822873600|
+|85252 |22     |4.0   |822873600|
+|85252 |24     |3.0   |822873600|
+|85252 |32     |4.0   |822873600|
+|85252 |34     |5.0   |822873600|
+|85252 |36     |5.0   |822873600|
+|85252 |45     |3.0   |822873600|
++------+-------+------+---------+
+only showing top 20 rows
+
+0.599999960000526
++------+-------+------+----------+
+|userId|movieId|rating|timestamp |
++------+-------+------+----------+
+|1108  |84392  |3.0   |1376108150|
+|1282  |2664   |4.0   |1337603157|
+|2210  |1610   |4.5   |1165037396|
+|2349  |2393   |4.5   |1181707056|
+|2663  |50068  |2.5   |1310385028|
+|3911  |72011  |4.5   |1268579834|
+|4461  |1517   |3.0   |1167459926|
+|4780  |527    |3.0   |1405622058|
+|4910  |58559  |5.0   |1417222339|
+|4951  |1367   |4.5   |1151792181|
+|5443  |1      |4.0   |1280006151|
+|5509  |474    |4.0   |1212778438|
+|6030  |58309  |0.5   |1250561349|
+|6715  |52724  |4.0   |1209717449|
+|7047  |788    |3.0   |1398082263|
+|7166  |30749  |4.5   |1353833015|
+|7201  |92687  |3.0   |1328895607|
+|7319  |1193   |1.5   |1239953867|
+|7902  |592    |4.5   |1290271171|
+|8443  |8641   |2.0   |1301078872|
++------+-------+------+----------+
+only showing top 20 rows
+
+0.40000003999947403
++------+-------+------+---------+
+|userId|movieId|rating|timestamp|
++------+-------+------+---------+
+|28507 |1176   |4.0   |789652004|
+|131160|21     |3.0   |789652009|
+|131160|47     |5.0   |789652009|
+|131160|1079   |3.0   |789652009|
+|20821 |32     |5.0   |822873600|
+|53434 |19     |1.0   |822873600|
+|85252 |2      |4.0   |822873600|
+|85252 |7      |5.0   |822873600|
+|85252 |10     |5.0   |822873600|
+|85252 |11     |5.0   |822873600|
+|85252 |12     |1.0   |822873600|
+|85252 |17     |5.0   |822873600|
+|85252 |19     |3.0   |822873600|
+|85252 |21     |4.0   |822873600|
+|85252 |22     |4.0   |822873600|
+|85252 |24     |3.0   |822873600|
+|85252 |32     |4.0   |822873600|
+|85252 |34     |5.0   |822873600|
+|85252 |36     |5.0   |822873600|
+|85252 |45     |3.0   |822873600|
++------+-------+------+---------+
+only showing top 20 rows
+
+0.799999980000263
++------+-------+------+----------+
+|userId|movieId|rating|timestamp |
++------+-------+------+----------+
+|1108  |84392  |3.0   |1376108150|
+|1282  |2664   |4.0   |1337603157|
+|2663  |50068  |2.5   |1310385028|
+|3911  |72011  |4.5   |1268579834|
+|4780  |527    |3.0   |1405622058|
+|4910  |58559  |5.0   |1417222339|
+|5443  |1      |4.0   |1280006151|
+|7047  |788    |3.0   |1398082263|
+|7166  |30749  |4.5   |1353833015|
+|7201  |92687  |3.0   |1328895607|
+|7902  |592    |4.5   |1290271171|
+|8443  |8641   |2.0   |1301078872|
+|13174 |4744   |3.0   |1296170569|
+|15108 |81564  |1.5   |1301816744|
+|15918 |105844 |3.5   |1393279283|
+|17956 |8529   |4.0   |1383515393|
+|18754 |589    |4.0   |1258045741|
+|19526 |76093  |5.0   |1415313141|
+|21086 |103624 |4.5   |1375212335|
+|21201 |6016   |4.0   |1260302611|
++------+-------+------+----------+
+only showing top 20 rows
+
+0.20000001999973702
+------------------------------------ TASK A QUESTION 2 --------------------------------------------------------
+-------------------------------------- TASK A QUESTION 3 -------------------------------------------------------
+23/04/27 00:22:05 WARN InstanceBuilder$NativeBLAS: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+23/04/27 00:22:05 WARN InstanceBuilder$NativeBLAS: Failed to load implementation from:dev.ludovic.netlib.blas.ForeignLinkerBLAS
+23/04/27 00:22:06 WARN InstanceBuilder$NativeLAPACK: Failed to load implementation from:dev.ludovic.netlib.lapack.JNILAPACK
+ RMSE For ALS Setting 1:  [0.8045378874534052, 0.777890011510791, 0.7971173369759578]
+
+
+ MSE For ALS Setting 1:  [0.647281212347988, 0.6051128700082585, 0.6353960489076427]
+
+
+ MAE For ALS Setting 1:  [0.6180958893954612, 0.5929472436711883, 0.6045092040649985]
+
+
+ RMSE For ALS Setting 2:  [0.8044428962247182, 0.7749843114448256, 0.7961068998232464]
+
+
+ MSE For ALS Setting 2:  [0.6471283732864128, 0.6006006829856104, 0.6337861959461806]
+
+
+ MAE For ALS Setting 2:  [0.6204180633864665, 0.5894919837065686, 0.6042264945527568]
+
+
+------------------------------------ TASK B QUESTION 1 -----------------------------------------------
++---+--------------------+----------+
+| id|            features|prediction|
++---+--------------------+----------+
+| 10|[-0.055622064, -0...|         9|
+| 40|[0.045446377, -0....|         1|
+| 70|[-0.45465285, -0....|        21|
+| 80|[-0.006021735, -0...|         6|
+|100|[-0.2167114, -0.4...|         5|
+|120|[0.32269084, -0.3...|        19|
+|130|[0.1412861, -0.36...|         9|
+|140|[0.043749545, -0....|         5|
+|160|[0.050623957, -0....|        20|
+|170|[-0.10469459, -0....|        13|
++---+--------------------+----------+
+only showing top 10 rows
+
+ For 40% training data, the size of each of top-5 clusters are as follows 
+
+Cluster 18 has 4738 users.
+Cluster 6 has 4597 users.
+Cluster 9 has 4129 users.
+Cluster 21 has 3784 users.
+Cluster 12 has 3391 users.
+
+
++---+--------------------+----------+
+| id|            features|prediction|
++---+--------------------+----------+
+| 10|[0.2078442, -0.11...|        17|
+| 20|[-0.038161602, -0...|        21|
+| 40|[0.109279044, -0....|        15|
+| 70|[-0.082692124, -0...|         7|
+| 80|[-0.0013485358, -...|        22|
+| 90|[0.34994248, -0.2...|        22|
+|100|[-0.3408808, -0.0...|        21|
+|120|[0.8908827, -0.45...|         9|
+|130|[0.2511001, -0.29...|        22|
+|140|[-0.20966944, -0....|        11|
++---+--------------------+----------+
+only showing top 10 rows
+
+[Row(prediction=0, count=5794), Row(prediction=17, count=5442), Row(prediction=11, count=4893), Row(prediction=14, count=4790), Row(prediction=22, count=4774)]
+ For 60% training data, the size of each of top-5 clusters are as follows 
+
+Cluster 0 has 5794 users.
+Cluster 17 has 5442 users.
+Cluster 11 has 4893 users.
+Cluster 14 has 4790 users.
+Cluster 22 has 4774 users.
+
+
++---+--------------------+----------+
+| id|            features|prediction|
++---+--------------------+----------+
+| 10|[0.35684603, 0.15...|         9|
+| 20|[0.56155944, 0.31...|         7|
+| 30|[0.32267436, 0.44...|         9|
+| 40|[0.36338365, 0.24...|        24|
+| 50|[0.35280123, 0.44...|         6|
+| 70|[0.48065454, 0.16...|         0|
+| 80|[0.3046852, 0.304...|        13|
+| 90|[0.30039644, 0.31...|        19|
+|100|[0.5355887, 0.206...|        22|
+|110|[-0.123012476, 0....|        16|
++---+--------------------+----------+
+only showing top 10 rows
+
+[Row(prediction=19, count=7038), Row(prediction=9, count=6912), Row(prediction=24, count=6738), Row(prediction=10, count=6436), Row(prediction=13, count=6180)]
+ For 80% training data, the size of each of top-5 clusters are as follows 
+
+Cluster 19 has 7038 users.
+Cluster 9 has 6912 users.
+Cluster 24 has 6738 users.
+Cluster 10 has 6436 users.
+Cluster 13 has 6180 users.
+
+
+------------------------------------ TASK B QUESTION 2 -----------------------------------------------
+Movies rated by users of largest cluster(for 40% training data) and their respective average ratings are: 
+ 
++-------+------------------+
+|movieId|        avg_rating|
++-------+------------------+
+|   1580|3.4929133858267716|
+|   1591| 2.048780487804878|
+|   1645|2.8363636363636364|
+|   1342|             2.592|
+|    463| 2.161290322580645|
+|    471|3.5879396984924625|
+|    833|1.9487179487179487|
+|   1959|3.6272189349112427|
+|   1088|2.8678500986193294|
+|   1238| 4.206756756756757|
+|   2366| 4.156105100463678|
+|   3175|3.7675753228120517|
+|   2659| 3.232142857142857|
+|    496| 3.441860465116279|
+|   2866|              3.72|
+|   2122|1.9504950495049505|
+|   2142|2.6666666666666665|
+|   3794|3.5267857142857144|
+|   3918|2.0930232558139537|
+|   5300|             3.875|
++-------+------------------+
+only showing top 20 rows
+
+The top movies rated by users of largest cluster (for 40% training data) are 
+
++-------+------------------+
+|movieId|avg_rating        |
++-------+------------------+
+|1238   |4.206756756756757 |
+|2366   |4.156105100463678 |
+|1084   |4.322976287816844 |
+|858    |4.77455268389662  |
+|4190   |4.085365853658536 |
+|3475   |4.13986013986014  |
+|1303   |4.241622574955908 |
+|2776   |4.041666666666667 |
+|5071   |4.125             |
+|1265   |4.075174825174825 |
+|3089   |4.561743341404358 |
+|2488   |4.18              |
+|1223   |4.258555133079848 |
+|2924   |4.085470085470085 |
+|3377   |4.0               |
+|898    |4.496774193548387 |
+|5995   |4.3023255813953485|
+|1157   |4.333333333333333 |
+|296    |4.428287644020659 |
+|3306   |4.153846153846154 |
++-------+------------------+
+only showing top 20 rows
+
++-----------+-----------+
+|genre      |genre_count|
++-----------+-----------+
+|Drama      |481        |
+|Comedy     |181        |
+|Romance    |129        |
+|Crime      |96         |
+|Thriller   |96         |
+|War        |64         |
+|Adventure  |57         |
+|Documentary|57         |
+|Mystery    |52         |
+|Action     |45         |
+|Film-Noir  |38         |
+|Musical    |33         |
+|Horror     |33         |
+|Fantasy    |32         |
+|Sci-Fi     |25         |
+|Western    |23         |
+|Children   |20         |
+|Animation  |19         |
++-----------+-----------+
+
+Top 10 most genres for top_movies using the 40% training data are: 
+
+['Drama', 'Comedy', 'Romance', 'Crime', 'Thriller', 'War', 'Adventure', 'Documentary', 'Mystery', 'Action']
+Movies rated by users of largest cluster(for 60% training data) and their respective average ratings are: 
+ 
++-------+------------------+
+|movieId|        avg_rating|
++-------+------------------+
+|    471| 3.754814814814815|
+|   1580| 4.034739454094293|
+|   1645|3.7384937238493725|
+|   1342|3.2153284671532845|
+|   2366|3.9944237918215615|
+|   2122| 2.865079365079365|
+|   1088| 3.559792027729636|
+|   3175|3.9726166328600407|
+|    148|2.6818181818181817|
+|   1959| 3.682274247491639|
+|   2866|3.9166666666666665|
+|   5803|2.9926470588235294|
+|   1238| 3.867088607594937|
+|   6620|           3.74375|
+|   1591|2.9784172661870505|
+|   2142| 3.331967213114754|
+|    833| 2.746913580246914|
+|   3997| 2.288793103448276|
+|   4519| 3.737623762376238|
+|   3918|3.2527472527472527|
++-------+------------------+
+only showing top 20 rows
+
+The top movies rated by users of largest cluster (for 60% training data) are 
+
++-------+------------------+
+|movieId|avg_rating        |
++-------+------------------+
+|1580   |4.034739454094293 |
+|7833   |4.0               |
+|7993   |4.0               |
+|1084   |4.085667215815486 |
+|858    |4.6538046411225045|
+|1721   |4.068504594820384 |
+|4190   |4.257142857142857 |
+|3475   |4.085714285714285 |
+|1270   |4.387635574837311 |
+|1303   |4.265682656826568 |
+|3000   |4.075581395348837 |
+|5984   |4.0               |
+|1265   |4.19533096926714  |
+|3098   |4.065934065934066 |
+|3089   |4.186440677966102 |
+|2488   |4.041666666666667 |
+|6598   |4.027777777777778 |
+|8779   |4.0               |
+|8650   |4.25              |
+|8743   |4.0               |
++-------+------------------+
+only showing top 20 rows
+
++-----------+-----------+
+|genre      |genre_count|
++-----------+-----------+
+|Drama      |745        |
+|Comedy     |326        |
+|Romance    |210        |
+|Thriller   |179        |
+|Crime      |167        |
+|Action     |156        |
+|Adventure  |143        |
+|War        |117        |
+|Documentary|111        |
+|Mystery    |85         |
+|Sci-Fi     |68         |
+|Fantasy    |63         |
+|Musical    |62         |
+|Animation  |52         |
+|Horror     |50         |
+|Children   |48         |
+|Western    |46         |
+|Film-Noir  |45         |
+|IMAX       |13         |
++-----------+-----------+
+
+Top 10 most genres for top_movies using the 60% training data are: 
+
+['Drama', 'Comedy', 'Romance', 'Thriller', 'Crime', 'Action', 'Adventure', 'War', 'Documentary', 'Mystery']
+Movies rated by users of largest cluster(for 80% training data) and their respective average ratings are: 
+ 
++-------+------------------+
+|movieId|        avg_rating|
++-------+------------------+
+|   1580|3.9370531551134595|
+|   3175|3.8590494791666665|
+|    471|3.7915936952714535|
+|   2366|3.6550632911392404|
+|   1645| 3.620101137800253|
+|   3918| 2.933734939759036|
+|   1591| 2.907556270096463|
+|   4519| 3.430327868852459|
+|   1088|2.9625984251968505|
+|  26425|3.7941176470588234|
+|  44022|           3.40625|
+|   3997| 2.178861788617886|
+|   7340|               3.0|
+|   1238| 3.659340659340659|
+|   8638|3.8425925925925926|
+|   1342| 2.886138613861386|
+|   6620| 3.352272727272727|
+|  36525|3.4594594594594597|
+|   2122|            2.7125|
+|   1959|3.1883561643835616|
++-------+------------------+
+only showing top 20 rows
+
+The top movies rated by users of largest cluster (for 80% training data) are 
+
++-------+------------------+
+|movieId|avg_rating        |
++-------+------------------+
+|32460  |4.416666666666667 |
+|31035  |4.0               |
+|858    |4.381005338078292 |
+|48780  |4.125             |
+|4190   |4.0               |
+|48711  |4.0               |
+|2999   |4.0               |
+|1270   |4.222545878240606 |
+|3488   |4.0               |
+|3000   |4.1770538243626065|
+|1303   |4.113259668508287 |
+|8924   |4.25              |
+|8407   |4.25              |
+|1265   |4.0443946188340805|
+|49668  |4.5               |
+|5223   |4.0               |
+|1223   |4.175097276264592 |
+|2924   |4.033149171270718 |
+|3377   |4.0               |
+|8678   |4.125             |
++-------+------------------+
+only showing top 20 rows
+
++-----------+-----------+
+|genre      |genre_count|
++-----------+-----------+
+|Drama      |557        |
+|Comedy     |276        |
+|Romance    |165        |
+|Action     |158        |
+|Thriller   |151        |
+|Crime      |131        |
+|Adventure  |125        |
+|Documentary|98         |
+|War        |91         |
+|Mystery    |69         |
+|Sci-Fi     |62         |
+|Fantasy    |47         |
+|Animation  |42         |
+|Western    |40         |
+|Musical    |36         |
+|Horror     |34         |
+|Film-Noir  |29         |
+|Children   |24         |
+|IMAX       |14         |
++-----------+-----------+
+
+Top 10 most genres for top_movies using the 80% training data are: 
+
+['Drama', 'Comedy', 'Romance', 'Action', 'Thriller', 'Crime', 'Adventure', 'Documentary', 'War', 'Mystery']
